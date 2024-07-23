@@ -1,0 +1,85 @@
+/*For the body I have chosen a background color of cadetblue so 
+that it runs through all html pages.*/
+
+body{
+    background-color: cadetblue;
+}
+
+/*I have targeted the h1 & h2 with border style,color, radius and 
+a bit of text shadow*/
+h1{
+    text-shadow:1px 1px 3px;
+    border-style:solid;
+    border-color:black;
+    border-radius: 5px;
+    
+} 
+
+h2{
+    text-shadow: 1px 1px 3px;
+    border-style:solid;
+    border-color:black;
+    border-radius: 5px;
+}
+
+/*.Location is used from page3 and will select all names with
+a class name of "Location"*/
+
+.Location{
+    display: flex;
+    align-items: center;
+}
+    /*In some .Locations I have added a cursor of pointer so that when you hover over your
+    selection it changes the cursor and color of what you are selecting.*/
+.Location label{
+    cursor: pointer;
+    display: flex;
+}
+    
+.Location input[type="radio"]{
+    cursor: pointer;                
+    opacity: 0;
+    position: absolute;
+}
+    /*Here I am using "before" which creats a pseudo-element so that
+     it can become the first child of the selected element.*/
+    
+.Location label::before{
+    content:"" ;
+    width: 1em;
+    height: 1em;
+    border-radius: .15em;
+    border: .05em solid black;
+}
+    /*using my class selectors here so that I can style my "radio" selection 
+    using flex on display so that it looks more presentable also added 
+    some hover effect so user has an ideal of what they are selecting*/
+.Location label:hover::before,
+.Location input[type="radio"]:hover + label::before{
+    background-color: greenyellow;
+}
+.Location input[type="radio"]:focus + label::before {
+    box-shadow: 0 0 20px black
+}
+
+.Location input[type="radio"]:checked + label::before{
+    content: '\002714';
+    background-color:forestgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+
+    /*Here I am using a simple id to help my image on first page 
+    adjust properly on website when it shrinks or gets larger.*/
+#rexthelion{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
